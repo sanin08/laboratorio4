@@ -1,5 +1,19 @@
 import pika
-connection = pika.BlockingConnection(pika.ConnectionParameters('54.161.183.209', 5672, '/',
+import sys
+def ipPuerto():
+
+    if len(sys.argv) == 3:
+        ipElastica = sys.argv[1]
+        puerto = sys.argv[2]
+        print('ip:', ipElastica,'\n puerto:', puerto)
+        
+    else:
+        print('Para iniciar el programa debe ingresar de la siguiente forma: $python3 publisher.py ip-sever port')
+        print('$python3 publisher.py 54.161.183.209 5672\n')
+
+    return ipElastica, puerto
+ipElastica,puerto = ipPuerto()
+connection = pika.BlockingConnection(pika.ConnectionParameters(ipElastica, puerto, '/',
 pika.PlainCredentials('user', 'password')))
 channel = connection.channel()
 seguir=True
