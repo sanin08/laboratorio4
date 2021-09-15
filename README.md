@@ -22,5 +22,5 @@ Instalar pika `pip install pika`
 Para evitar la utilización de ip quemada en código, al ejecutar el programa en la instancia con el siguiente código:
 para el publisher: `$python3 publishers.py 54.161.183.209 5672`
 para el subscriber:`$python3 subscribers.py 54.161.183.209 5672`
-El user de rabbitmq es user
-El password de rabbitmq es password
+El user de rabbitmq es `user`
+El password de rabbitmq es `password`
